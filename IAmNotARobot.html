@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"> 
+<style>
+   body {
+      margin: 0;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+   }
+   a {
+      font-size: 70px;
+   }
+   input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 25px;
+      text-align: center;
+   }
+   Button {
+      display: block;
+      width: 100%;
+      margin: 0px;
+      border: 0px solid transparent;
+      color: black;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 25px;
+      background-color: lightgray;
+   }
+</style>
+<html>
+   
+   <head>
+
+   </head>
+   <body id="Main" onLoad="getTime()" style="background-color: gray;">
+      <a>Time Capcha</a><br><br>
+      <a style="font-size: 40px;">By: Pidogs</a><br><br>
+      <a style="font-size: 35px;">Enter the time below in the text box.</a>
+      <a  id="time">N/A</a><br>
+      <a  id="Try">Your Try</a><br>
+      <input  autocomplete="off" id="Input" type="text" onkeypress="clickPress(event)"><br>
+      <button id="myBtn" onclick="isEqualTo();">Input</button>
+   </body>
+   <script>
+         
+      var time;
+      var endTime;
+      function getTime(){
+         time = Date.now();
+         document.getElementById("time").innerHTML = time;
+         window.onload = getTime;
+      }
+      setInterval(getTime,1);
+
+      function isEqualTo(){
+         x = document.getElementById('Input').value;
+         document.getElementById('Try').innerHTML = x;
+         if(x==time){
+            document.getElementById("Main").style.backgroundColor = "greenyellow";
+            endTime = time+5000;
+         }else{
+            document.getElementById("Main").style.backgroundColor = "Red";
+            endTime = time+1000;
+         }
+      }
+
+      function setGray(){
+         if(endTime <= Date.now()){
+            document.getElementById("Main").style.backgroundColor = "Gray";
+         }
+      }
+      setInterval(setGray,50);
+      function clickPress(event) {
+      if (event.keyCode == 13) {
+          isEqualTo();
+      }
+}
+
+      
+   </script>
+</html>
