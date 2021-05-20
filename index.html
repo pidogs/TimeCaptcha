@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8"> 
 <style>
-   body {
+   div {
       margin: 0;
       position: absolute;
       text-align: center;
@@ -43,14 +43,17 @@
    <head>
 
    </head>
-   <body id="Main" onLoad="getTime()" style="background-color: gray;">
-      <a>Time Capcha</a><br><br>
-      <a style="font-size: 40px;">By: Pidogs</a><br><br>
-      <a style="font-size: 35px;">Enter the time below in the text box.</a>
-      <a  id="time">N/A</a><br>
-      <a  id="Try">Your Try</a><br>
-      <input  autocomplete="off" id="Input" type="text" onkeypress="clickPress(event)"><br>
-      <button id="myBtn" onclick="isEqualTo();">Input</button>
+   <body  onLoad="getTime()" style="background-color: gray;">
+      <button align="right" style="float: right; width: 120px;height: 100px; background-color: #000; color: gray;"  type="submit" onclick="location.href='https://github.com/pidogs/TimeCaptcha'">Source Code</button>
+      <div id="Main">
+         <a>Time Captcha</a><br><br>
+         <a style="font-size: 40px;">By: Pidogs</a><br><br>
+         <a style="font-size: 35px;">Enter the time below in the text box.</a>
+         <a  id="time">N/A</a><br>
+         <a  id="Try">Your Try</a><br>
+         <input  autocomplete="off" id="Input" type="text" onkeypress="clickPress(event)"><br>
+         <button id="myBtn" onclick="isEqualTo();">Input</button>
+      </div>
    </body>
    <script>
          
